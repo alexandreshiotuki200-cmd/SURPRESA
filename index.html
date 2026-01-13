@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff0f3">
+    <title>2 Anos de Nós</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="/heart-solid-full.svg">    
+    <style>
+        :root {
+            --primary: #ff4d6d;
+            --bg: #fff0f3;
+            --text: #590d22;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .timer-box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.2);
+            margin: 20px 0;
+        }
+
+        #timer {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 10px 0;
+            display: block;
+        }
+
+        .love-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 10px;
+            padding-bottom: 20px;
+            margin: 30px 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .photo-card {
+            flex: 0 0 85%;
+            scroll-snap-align: center;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            aspect-ratio: 9/16;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .interaction-area {
+            position: relative;
+            height: 300px;
+            margin-top: 20px;
+            border: 2px dashed var(--primary);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            width: 100%;
+            height: 100px;
+            position: relative;
+        }
+
+        button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #yesBtn {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 77, 109, 0.4);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-150%);
+            top: 20px;
+            z-index: 10;
+        }
+
+        #noBtn {
+            background-color: #ccc;
+            color: #555;
+            position: absolute;
+            left: 50%;
+            transform: translateX(50%);
+            top: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .hidden-surprise {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            background: white;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+            animation: slideUp 1s ease;
+        }
+
+        .show-surprise {
+            display: block;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .heart {
+            color: var(--primary);
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>2 Anos</h1>
+
+        <div style="margin-bottom: 20px;">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/1AaBgDyjuG6ckj8PuRoG9m?utm_source=generator" 
+            width="100%" height="352" frameBorder="0" allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy"></iframe>
+        </div>
+
+        <div class="timer-box">
+            <p>Desde 13 de Janeiro de 2024 às 16:12...</p>
+            <span id="timer">Calculando...</span>
+            <p class="love-text">e eu ainda te amo como da primeira vez.</p>
+        </div>
+
+        <div class="carousel">
+            <div class="photo-card">
+                <img src="./WhatsApp Image 2026-01-13 at 12.06.41.jpeg" alt="Foto 0">
+            </div>
+            <div class="photo-card">
+                <img src="WhatsApp Image 2026-01-13 at 12.06.41 (1).jpeg" alt="Foto 1">
+            </div>
+            <div class="photo-card">
+                <img src="/WhatsApp Image 2026-01-13 at 12.06.42.jpeg" alt="Foto 2">
+            </div>
+            <div class="photo-card">
+                <img src="/WhatsApp Image 2026-01-13 at 12.06.42 (1).jpeg" alt="Foto 3">
+            </div>
+            <div class="photo-card">
+                <img src="/WhatsApp Image 2026-01-13 at 12.06.42 (2).jpeg" alt="Foto 4">
+            </div>
+            <div class="photo-card">
+                <img src="/WhatsApp Image 2026-01-13 at 12.06.43.jpeg" alt="Foto 5">
+            </div>
+            <div class="photo-card">
+                <img src="/WhatsApp Image 2026-01-13 at 12.06.44.jpeg" alt="Foto 6">
+            </div>
+            <div class="photo-card">
+                <img src="/WhatsApp Image 2026-01-13 at 12.06.44 (1).jpeg" alt="Foto 7">
+            </div>
+            <div class="photo-card">
+                <img src="/WhatsApp Image 2026-01-13 at 12.06.44 (2).jpeg" alt="Foto 8">
+            </div>
+            <div class="photo-card">
+                <img src="/WhatsApp Image 2026-01-13 at 12.06.44 (3).jpeg" alt="Foto 9">
+            </div>
+            <div class="photo-card">
+                <img src="/WhatsApp Image 2026-01-13 at 12.06.45.jpeg" alt="Foto 10">
+            </div>
+            <div class="photo-card">
+                <img src="/WhatsApp Image 2026-01-13 at 12.06.45 (1).jpeg" alt="Foto 11">
+            </div>
+            <div class="photo-card">
+                <img src="/WhatsApp Image 2026-01-13 at 12.06.45 (2).jpeg" alt="Foto 12">
+            </div>
+            <div class="photo-card">
+                <img src="/WhatsApp Image 2026-01-13 at 12.06.45 (3).jpeg" alt="Foto 13">
+            </div>
+        </div>
+
+        <div class="interaction-area">
+            <h3>Quer continuar namorando comigo?</h3>
+            <div class="buttons">
+                <button id="yesBtn">SIM</button>
+                <button id="noBtn">NÃO</button>
+            </div>
+        </div>
+
+        <div id="surprise" class="hidden-surprise">
+            <div class="heart">❤️</div>
+            <h2>Eu sabia!</h2>
+            <br>
+            <p>Muito obrigado por me dar essa oportunidade de continuar oferecendo todo o meu amor
+                por você. Nesses 2 anos que estivemos juntos, passamos por muitos momentos, e espero poder
+                continuar colecionando lindas memórias ao seu lado, minha princesa.
+            </p>
+            <br>
+            <p>Obrigado por continuar ao meu lado por todo esse tempo... Eu com certeza sou o homem mais
+                feliz do mundo por ter uma parceira maravilhosa como você!
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // 1. Lógica do Contador
+        const startDate = new Date('2024-01-13T16:12:00').getTime();
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const difference = now - startDate;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('timer').innerText =
+                `Já se passaram ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // 2. Lógica do Botão "Não" (Fujão)
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const surpriseDiv = document.getElementById('surprise');
+        const interactionArea = document.querySelector('.interaction-area');
+
+        function moveButton() {
+            // Limites da área para o botão não sair da caixa
+            const areaRect = interactionArea.getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
+
+            // Calculando nova posição aleatória segura dentro da div pai
+            // Usamos offsetWidth/Height da div pai (.interaction-area)
+            const maxX = interactionArea.offsetWidth - noBtn.offsetWidth - 20;
+            const maxY = interactionArea.offsetHeight - noBtn.offsetHeight - 20;
+
+            const newX = Math.random() * maxX;
+            const newY = Math.random() * maxY;
+
+            // Resetar transform para posicionar via absolute top/left puro dentro do container relative
+            noBtn.style.transform = 'none';
+            noBtn.style.left = `${newX}px`;
+            noBtn.style.top = `${newY}px`;
+        }
+
+        // Funciona no PC (mouse) e Celular (toque)
+        noBtn.addEventListener('mouseover', moveButton);
+        noBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Evita o clique real
+            moveButton();
+        });
+        noBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            moveButton();
+        });
+
+        // 3. Lógica do Botão "Sim"
+        yesBtn.addEventListener('click', () => {
+            surpriseDiv.classList.add('show-surprise');
+            // Scroll suave até a surpresa
+            surpriseDiv.scrollIntoView({ behavior: 'smooth' });
+
+            // Efeito extra: Chuva de corações (opcional, simples alert para debug ou feedback visual)
+            // Pode adicionar confetes aqui depois se quiser
+        });
+
+    </script>
+</body>
+
+</html>
